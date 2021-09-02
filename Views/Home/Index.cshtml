@@ -12,21 +12,22 @@
     <input type="hidden" id="digit_2" name="digit_2" />
 
     <input type="submit" value="Calculate" />
-    
 </form>
 
 @*script for digit buttons*@
 <script>
     const buttonElem = document.getElementById('_input');
+    const _inpt = document.getElementById('operation');
     const digit2 = document.getElementById('digit_2');
     let onButtonClick = function (ch) {
-        if (buttonElem.value == '+' || buttonElem.value == '*' || buttonElem.value == '/' || buttonElem.value == '-') {
-            buttonElem.value = ch
-            digit2.value = ch
+        if (_inpt.value == '+' || _inpt.value == '*' || _inpt.value == '/' || _inpt.value == '-') {
+            if (buttonElem.value == '+' || buttonElem.value == '*' || buttonElem.value == '/' || buttonElem.value == '-')
+                buttonElem.value = null
+            buttonElem.value += ch
+            digit2.value += ch
         }
         else buttonElem.value += ch
     }
-
 </script>
 
 @*script for operators*@
@@ -46,7 +47,6 @@
             op.value = ch
             input.value = ch
         }
-        
     }
 </script>
 
@@ -62,7 +62,6 @@
         d2.value = null
         oper.value = null
     }
-
 </script>
 
 <table border="0">
