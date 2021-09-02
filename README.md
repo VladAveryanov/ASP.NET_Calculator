@@ -12,7 +12,7 @@ Description to the user:
 In order to use my calculator there is should be a working server.
 If this condition is met, then user can go to URL "https://<localhost adress for local server>/Home/Calculate"
 
-![alt text](https://github.com/[VladAveryanov]/[ASP.NET_Calculator]/blob/[master]/asp.net_calc.png?raw=true)
+![asp net_calc](https://user-images.githubusercontent.com/70232404/131795585-2c3838c3-104d-4be3-8a57-d17644ab57b3.png)
 
 To enter a number user should press a button for number
 
