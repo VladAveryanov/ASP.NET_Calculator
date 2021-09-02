@@ -15,5 +15,7 @@ If this condition is met, then user can go to URL "https://<localhost adress for
 ![alt text](https://github.com/[VladAveryanov]/[ASP.NET_Calculator]/blob/[master]/asp.net_calc.png?raw=true)
 
 To enter a number user should press a button for number
+
 To make operation user should press a button for operation
+
 To perform calculation user should press a button "Calculate"
