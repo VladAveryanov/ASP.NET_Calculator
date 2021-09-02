@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<form asp-action="Calculate" method="post">
+    <input type="text" id="_input" value="@Model" />
+
+    <input type="hidden" id="digit_1" name="digit_1">
+    <input type="hidden" id="operation" name="operation" />
+    <input type="hidden" id="digit_2" name="digit_2" />
+
+    <input type="submit" value="Calculate" />
+    
+</form>
+
+@*script for digit buttons*@
+<script>
+    const buttonElem = document.getElementById('_input');
+    const digit2 = document.getElementById('digit_2');
+    let onButtonClick = function (ch) {
+        if (buttonElem.value == '+' || buttonElem.value == '*' || buttonElem.value == '/' || buttonElem.value == '-') {
+            buttonElem.value = ch
+            digit2.value = ch
+        }
+        else buttonElem.value += ch
+    }
+
+</script>
+
+@*script for operators*@
+<script>
+    const digit1 = document.getElementById('digit_1');
+    const input = document.getElementById('_input');
+    const op = document.getElementById('operation');
+
+    let onOperatorClick = function (ch) {
+        if (op.value == '+' || op.value == '*' || op.value == '/' || op.value == '-') {
+            op.value = ch
+            input.value = ch
+        }
+        else
+        {
+            digit1.value = input.value
+            op.value = ch
+            input.value = ch
+        }
+        
+    }
+</script>
+
+@*script for clearing*@
+<script>
+    const inpt = document.getElementById('_input');
+    const d1 = document.getElementById('digit_1');
+    const d2 = document.getElementById('digit_2');
+    const oper = document.getElementById('operation');
+    let onButtonClearClick = function () {
+        inpt.value = null
+        d1.value = null
+        d2.value = null
+        oper.value = null
+    }
+
+</script>
+
+<table border="0">
+    <tr>
+        <td>
+            <input type="submit" name="digit" value="1" width="50" onclick="onButtonClick('1')" />
+            <input type="submit" name="digit" value="2" width="50" onclick="onButtonClick('2')" />
+            <input type="submit" name="digit" value="3" width="50" onclick="onButtonClick('3')" />
+            <input type="submit" name="digit" value="+" width="50" onclick="onOperatorClick('+')" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="digit" value="4" width="50" onclick="onButtonClick('4')" />
+            <input type="submit" name="digit" value="5" width="50" onclick="onButtonClick('5')" />
+            <input type="submit" name="digit" value="6" width="50" onclick="onButtonClick('6')" />
+            <input type="submit" name="digit" value="-" width="50" onclick="onOperatorClick('-')" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="digit" value="7" width="50" onclick="onButtonClick('7')" />
+            <input type="submit" name="digit" value="8" width="50" onclick="onButtonClick('8')" />
+            <input type="submit" name="digit" value="9" width="50" onclick="onButtonClick('9')" />
+            <input type="submit" name="digit" value="*" width="50" onclick="onOperatorClick('*')" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="digit" value="0" width="50" onclick="onButtonClick('0')" />
+            <input type="submit" name="digit" value="," width="50" onclick="onButtonClick(',')" />
+            <input type="submit" name="digit" value="/" width="50" onclick="onOperatorClick('/')" />
+            <input type="submit" name="digit" value="C" width="50" onclick="onButtonClearClick()" />
+        </td>
+    </tr>
+</table>
+
+
