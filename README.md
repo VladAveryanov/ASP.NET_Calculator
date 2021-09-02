@@ -11,7 +11,9 @@ Description to the user:
 
 In order to use my calculator there is should be a working server.
 If this condition is met, then user can go to URL "https://<localhost adress for local server>/Home/Calculate"
+
 ![alt text](https://github.com/[VladAveryanov]/[ASP.NET_Calculator]/blob/[master]/asp.net_calc.png?raw=true)
+
 To enter a number user should press a button for number
 To make operation user should press a button for operation
 To perform calculation user should press a button "Calculate"
